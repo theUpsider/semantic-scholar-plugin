@@ -1,10 +1,11 @@
 openapi: 3.0.0
 info:
-  title: Semantic Scholar Plugin
+  title: Semantic Scholar API
   version: '1.0'
 paths:
   /search_papers:
     get:
+      operationId: search_papers
       summary: Search papers on Semantic Scholar
       parameters:
         - name: query
@@ -12,6 +13,34 @@ paths:
           required: true
           schema:
             type: string
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
       responses:
         '200':
           description: Successful response
+        '404':
+          description: Nothing found
+
+  /paper_detail:
+    get:
+      operationId: paper_detail
+      summary: Get specific paper detail
+      parameters:
+        - name: paper_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+        '404':
+          description: Paper not found
