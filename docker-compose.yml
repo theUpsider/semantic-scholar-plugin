@@ -3,8 +3,6 @@ version: '3'
 services:
   semantic-scholar:
     build: .
-    volumes:
-      - semantic_scholar:/app
     environment:
       - FLASK_ENV=development
     networks:
@@ -21,9 +19,6 @@ services:
       - traefik.http.routers.semanticscholar.middlewares=semanticscholar-https-redirect
       - traefik.http.routers.semanticscholar.rule=Host(`semanticscholar.haski.app`)
       - traefik.http.services.semanticscholar-secure.loadbalancer.server.port=5000
-volumes:
-  semantic_scholar:
-    driver: local
 
 networks:
   web:
