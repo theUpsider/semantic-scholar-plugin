@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  semantic-scholar:
+    build: .
+    ports:
+      - "80:5000"
+    volumes:
+      - semantic_scholar:/app
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.middlewares.semanticscholar-https-redirect.redirectscheme.scheme=https
+      - traefik.http.routers.semanticscholar-secure.entrypoints=websecure
+      - traefik.http.routers.semanticscholar-secure.rule=Host(`semanticscholar.haski.app`)
+      - traefik.http.routers.semanticscholar-secure.service=semanticscholar-secure
+      - traefik.http.routers.semanticscholar-secure.tls=true
+      - traefik.http.routers.semanticscholar-secure.tls.certresolver=le
+      - traefik.http.routers.semanticscholar.entrypoints=web
+      - traefik.http.routers.semanticscholar.middlewares=semanticscholar-https-redirect
+      - traefik.http.routers.semanticscholar.rule=Host(`semanticscholar.haski.app`)
+      - traefik.http.services.semanticscholar-secure.loadbalancer.server.port=5000
+volumes:
+  semantic_scholar:
+    driver: local
+
+networks:
+  web:
+    name: traefik_web
+    external: true
