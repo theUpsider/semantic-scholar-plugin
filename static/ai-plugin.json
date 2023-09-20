@@ -6,12 +6,12 @@
   "description_for_model": "Plugin for searching academic papers via Semantic Scholar.",
   "logo_url": "https://assets-global.website-files.com/605236bb767e9a5bb229c63c/605274dd4af9b0ca8ac84182_s2-logo.svg",
   "contact_email": "david.fischer@hs-kempten.de",
-  "legal_info_url": "http://localhost:5000/legal",
+  "legal_info_url": "https://semanticscholar.haski.app/legal",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:5000/openapi.yaml"
+    "url": "https://semanticscholar.haski.app/openapi.yaml"
   }
 }

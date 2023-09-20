@@ -18,6 +18,8 @@ This repository contains a ChatGPT plugin to communicate with the [Semantic Scho
 
 ## Installation
 
+**Adapt all links in [ai-plugin.json](ai-plugin.json) to your needs!**
+
 ### Prerequisites
 
 - Python 3.9 or higher
