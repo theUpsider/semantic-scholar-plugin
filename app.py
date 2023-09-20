@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-# Serve ai-plugin.json
+# Serve .well-known/ai-plugin.json
 @app.route('/.well-known/ai-plugin.json', methods=['GET'])
 def serve_manifest():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'ai-plugin.json')
@@ -13,6 +13,12 @@ def serve_manifest():
 @app.route('/openapi.yaml', methods=['GET'])
 def serve_openapi():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'openapi.yaml')
+
+@app.route('/', methods=['GET'])
+def serve_index():
+    return jsonify({
+        "message": "Welcome to the AI Plugin for Semantic Scholar!"
+    })
 
 # Search papers on Semantic Scholar
 @app.route('/search_papers', methods=['GET'])
@@ -26,4 +32,5 @@ def search_papers():
     return jsonify(response.json())
 
 if __name__ == '__main__':
-    app.run(port=5337)
+    # serve on 0.0.0.0
+    app.run(host='0.0.0.0', port=5337, debug=True)
