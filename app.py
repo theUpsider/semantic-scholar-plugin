@@ -1,8 +1,10 @@
 from flask import Flask, send_from_directory, request, jsonify
+from flask_cors import CORS  # Import the CORS package
 import requests
 import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Serve .well-known/ai-plugin.json
 @app.route('/.well-known/ai-plugin.json', methods=['GET'])
