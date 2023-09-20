@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 # allow cors for all domains on all routes
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 # Serve .well-known/ai-plugin.json
@@ -63,4 +63,4 @@ def paper_detail():
 
 if __name__ == "__main__":
     # serve on 0.0.0.0
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

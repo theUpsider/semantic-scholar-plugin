@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a ChatGPT plugin designed to assist in systematic literature reviews. The codebase is primarily written in Python and is designed to integrate seamlessly with the ChatGPT API.
+This repository contains a ChatGPT plugin designed to assist in systematic literature reviews. The codebase is primarily written in Python and is designed to integrate seamlessly with the ChatGPT plugin API.
 
 [![Python](https://img.shields.io/badge/python-v3.9-blue)]()
 
@@ -14,7 +14,6 @@ This repository contains a ChatGPT plugin designed to assist in systematic liter
   - [Clone the Repository](#clone-the-repository)
   - [Docker Setup](#docker-setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
@@ -37,7 +36,7 @@ If you'd like to run the application in a Docker container, a `Dockerfile` is pr
 
 ```bash
 docker build -t chatgpt-plugin .
-docker run -p 4000:80 chatgpt-plugin
+docker run -p 80:5000 chatgpt-plugin
 ```
 
 ## Usage
