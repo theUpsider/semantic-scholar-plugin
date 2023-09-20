@@ -16,7 +16,7 @@ services:
       - traefik.http.routers.semanticscholar-secure.rule=Host(`semanticscholar.haski.app`)
       - traefik.http.routers.semanticscholar-secure.service=semanticscholar-secure
       - traefik.http.routers.semanticscholar-secure.tls=true
-      - traefik.http.routers.semanticscholar-secure.tls.certresolver=staging
+      - traefik.http.routers.semanticscholar-secure.tls.certresolver=le
       - traefik.http.routers.semanticscholar.entrypoints=web
       - traefik.http.routers.semanticscholar.middlewares=semanticscholar-https-redirect
       - traefik.http.routers.semanticscholar.rule=Host(`semanticscholar.haski.app`)

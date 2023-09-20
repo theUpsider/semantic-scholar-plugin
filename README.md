@@ -39,6 +39,16 @@ docker build -t chatgpt-plugin .
 docker run -p 80:5000 chatgpt-plugin
 ```
 
+#### Docker compose
+
+Alternatively, you can use `docker-compose` to build and run the Docker image:
+
+```bash
+docker-compose up -d
+```
+
+But be careful, it uses traefik and letsencrypt to generate a certificate for the domain. Make sure to change the compose file to your needs!
+
 ## Usage
 
 To use the ChatGPT plugin, follow these steps:
