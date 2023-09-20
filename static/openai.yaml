@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: Semantic Scholar Plugin
+  version: '1.0'
+paths:
+  /search_papers:
+    get:
+      summary: Search papers on Semantic Scholar
+      parameters:
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response

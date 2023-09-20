@@ -1,0 +1,5 @@
+# gitignore for flask app
+venv
+*.pyc
+instance/
+.env

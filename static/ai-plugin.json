@@ -1,0 +1,14 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Semantic Scholar Search",
+  "name_for_model": "semanticScholar",
+  "description_for_human": "Search academic papers via Semantic Scholar.",
+  "description_for_model": "Plugin for searching academic papers via Semantic Scholar.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:5000/openapi.yaml"
+  }
+}
