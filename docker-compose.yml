@@ -4,7 +4,7 @@ services:
   semantic-scholar:
     build: .
     ports:
-      - "80:5000"
+      - "5002:5000"
     volumes:
       - semantic_scholar:/app
     environment:
@@ -22,7 +22,7 @@ services:
       - traefik.http.routers.semanticscholar.entrypoints=web
       - traefik.http.routers.semanticscholar.middlewares=semanticscholar-https-redirect
       - traefik.http.routers.semanticscholar.rule=Host(`semanticscholar.haski.app`)
-      - traefik.http.services.semanticscholar-secure.loadbalancer.server.port=80
+      - traefik.http.services.semanticscholar-secure.loadbalancer.server.port=5002
 volumes:
   semantic_scholar:
     driver: local
