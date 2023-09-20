@@ -1,8 +1,8 @@
-# ChatGPT Plugin for Systematic Literature Review
+# ChatGPT Plugin for Semantic Scholar
 
 ## Overview
 
-This repository contains a ChatGPT plugin designed to assist in systematic literature reviews. The codebase is primarily written in Python and is designed to integrate seamlessly with the ChatGPT plugin API.
+This repository contains a ChatGPT plugin to communicate with the [Semantic Scholar API](https://www.semanticscholar.org/product/api/tutorial). The codebase is primarily written in Python and is designed to integrate seamlessly with the ChatGPT plugin API.
 
 [![Python](https://img.shields.io/badge/python-v3.9-blue)]()
 
@@ -26,8 +26,8 @@ This repository contains a ChatGPT plugin designed to assist in systematic liter
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/theUpsider/systematic-literature-review-chatgptplugin.git
-cd systematic-literature-review-chatgptplugin
+git clone https://github.com/theUpsider/semantic-scholar-plugin.git
+cd semantic-scholar-plugin
 ```
 
 ### Docker Setup
@@ -41,10 +41,11 @@ docker run -p 80:5000 chatgpt-plugin
 
 ## Usage
 
-To use the ChatGPT plugin for your systematic literature review, follow these steps:
+To use the ChatGPT plugin, follow these steps:
 
 1. **Start the Application**: Run `python app.py` to start the application.
-2. **Access the Plugin**: The plugin will be accessible at `http://localhost:4000` (or the port you've configured).
+2. **Access the Plugin**: The plugin will be accessible at `http://localhost` (or the port you've configured).
+3. **Install in ChatGPT**: [Tutorial](https://platform.openai.com/docs/plugins/introduction)
 
 ## License
 
